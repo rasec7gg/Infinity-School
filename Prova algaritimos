@@ -1,0 +1,10 @@
+#  Você está criando um programa para calcular a área de um retângulo.
+# O programa deve solicitar ao usuário que forneça a base e a altura do retângulo. Em seguida, o programa deve calcular a área usando a fórmula:
+# Área=Base×Altura
+
+base = float(input('Informe a base: '))
+altura = float(input('Informe a altura: '))
+
+area = base * altura
+
+print(f'a área do retângulo é {area}')
