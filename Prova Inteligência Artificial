@@ -1,0 +1,32 @@
+# [LPIA-A05]Desenvolva um programa em Python para calcular a média de notas de alunos em uma disciplina. O programa deve solicitar ao usuário o número de alunos e, em seguida,
+#  para cada aluno, pedir o nome e três notas. Utilize um loop 'for' para iterar sobre os alunos e suas notas.
+# Além disso, implemente uma estrutura condicional para verificar se cada aluno foi aprovado ou reprovado, considerando que a média mínima para aprovação é 7.0. Exiba o nome do aluno,
+#  suas notas, média e a indicação de aprovação ou reprovação.
+# Ao final, exiba a média geral da turma.
+
+qtdAlunos = int(input('Informe o número de alunos: '))
+somaNotas = 0
+
+for i in range(qtdAlunos):
+    nome = input('Informe o nome do aluno : ')
+    n1 = float(input('Informe a primeira nota do aluno: '))
+    n2 = float(input('Informe a segunda nota do aluno: '))
+    n3 = float(input('Informe a terceira nota do aluno: '))
+    
+    media = (n1 + n2 + n3) / 3
+    
+    somaNotas += media
+    
+    if media >= 7.0:
+        situaçao = 'Aprovado'
+    else:
+        situaçao = 'Reprovado'
+    
+    print(f'\nAluno: {nome}')
+    print(f'Notas: {n1}, {n2}, {n3}')
+    print(f'Média: {media:.2f}')
+    print(f'Situação: {situaçao}')
+
+mediaTurma = somaNotas / qtdAlunos
+
+print(f'Média da turma: {mediaTurma:.2f}')
