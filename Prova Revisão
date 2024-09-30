@@ -1,0 +1,26 @@
+# [LPIA-A06]  Crie um programa em Python que simule um sistema de login. O programa deve permitir ao usuário três tentativas para acertar o nome de usuário e a senha corretos.
+# Caso o usuário erre as credenciais, o programa deve fornecer uma mensagem informando quantas tentativas restam.
+# Se o usuário acertar, uma mensagem de boas-vindas deve ser exibida, e o programa deve terminar imediatamente.
+# Se todas as três tentativas falharem, o programa deve usar um loop for para exibir uma mensagem de "Acesso bloqueado" repetida três vezes.
+
+usuarioCerto = 'romulo'
+senhaCerta = '12345'
+
+tentativasMax = 3
+
+for tentativa in range(tentativasMax):
+    usuario = input('Informe o nome de usuário: ')
+    senha = input('Informe a senha: ')
+    
+    if usuario == usuarioCerto and senha == senhaCerta:
+        print('login bem sucedido, bem-vindo!')
+        break
+    else:
+        restante = tentativasMax - (tentativa + 1)
+        if restante > 0:
+            print(f'login incorreto, você tem {restante} tentativas restantes.')
+        else:
+            print('Todas as tentativas falharam.')
+else:
+    for i in range(3):
+        print(f'Acesso bloqueado, Tentativa {i + 1}')
