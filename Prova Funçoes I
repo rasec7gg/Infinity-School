@@ -1,0 +1,13 @@
+# [PYIA-A04] Crie uma função chamada media que receberá três números como argumentos. Esta função deve calcular a média aritmética desses três números.
+#  Para fazer isso, some os três números e, em seguida, divida o resultado por três. Por fim, a função deve retornar o valor da média aritmética calculada.
+
+def media(a: float, b: float, c: float) -> float:
+    return (a + b + c) / 3
+
+a = float(input('Informe o primeiro número: '))
+b = float(input('Informe o segundo número: '))  
+c = float(input('Informe o terceiro número: '))
+
+resultado = media(a, b, c)
+
+print(f'A média aritmética de {a}, {b} e {c} é: {resultado:.2f}') 
