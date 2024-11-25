@@ -1,0 +1,55 @@
+import random
+
+clientes = []
+
+def menu():
+    print('========= Loja de Doces =========')
+    print('[1] - Listar Vendas')
+    print('[2] - Registrar Nova Venda')
+    print('[3] - Encerrar')
+    print('=================================')
+    return input('Selecione uma opção -> ')
+
+def listar_clientes():
+    if not clientes:
+        print('Nenhum cliente registrado.')
+    else:
+        for indice_cliente in range(len(clientes)):
+            cliente = clientes[indice_cliente]
+            
+            nome_cliente = cliente["nome"]
+            telefone_cliente = cliente["telefone"]
+            endereco_cliente = cliente["endereco"]
+            
+            print(f'{indice_cliente + 1}. Nome: {nome_cliente} | Telefone: {telefone_cliente} | Endereço: {endereco_cliente}')
+
+def registrar_cliente():
+    nome = input('Nome: ')
+    telefone = input('Telefone: ')
+    endereco = input('Endereço: ')
+    clientes.append({'nome': nome, 'telefone': telefone, 'endereco': endereco})
+    print('Cliente registrado!')
+
+def sortear():
+    if clientes:
+        cliente = random.choice(clientes)
+        print(f'Cliente sorteado: {cliente["nome"]}, {cliente["telefone"]}, {cliente["endereco"]}')
+    else:
+        print('Nenhum cliente para sortear.')
+
+def main():
+    while True:
+        opcao = menu()
+        if opcao == '1':
+            listar_clientes()
+        elif opcao == '2':
+            registrar_cliente()
+        elif opcao == '3':
+            sortear()
+            print('Encerrando...')
+            print('Fim do Programa')  
+            break
+        else:
+            print('Opção inválida!')
+
+main()
